@@ -1,0 +1,53 @@
+{
+    "contact_person": {
+        "name": "Marta",
+        "last_name": "Pérez García",
+        "role": "CEO",
+        "phone": "+34 600 000 000",
+        "email": "john@doe.com" 
+    },
+    "company_info": {
+        "logo": "URL DEL LOGO",
+        "cif": "B11232343",
+        "business_name": "Kiota Intelligence SL",
+        "commercial_name": "Kiota",
+        "address": "Avda Buendía 11",
+        "cp": "11125",
+        "province": "Guadalajara",
+        "cirty": "Guadalajara",
+        "phone": "+34 600 000 000",
+        "web": "https://www.kiota.com",
+        "email": "john@doe.com",
+        "sector": "Software",
+        "main_activity": "Desarrollo de software",
+        "cnae": "620",
+        "team": {
+            "male": 6,
+            "female": 4
+        },
+        "business_group": {
+            "country": "Alemania"
+        }
+    },
+    "shares": {
+        "founders": 86,
+        "investors": 14
+    },
+    "financials": {
+        "clients": {
+            "eu": 249,
+            "spain": 700,
+            "rest_of_the_world": 50
+        },
+        "billing": 350000
+    },
+    "lean_canvas": {
+        "key_partners": "Partner 1",
+        "key_activities": "Desarrollo",
+        "clients_relations": "Atención al cliente",
+        "clients_segments": "Segmento 1",
+        "key_resources": "Equipo de desarrollo",
+        "costs": "Desarrollo, servidores",
+        "incomes": "Suscripciones mensuales"
+    }
+}
