@@ -100,8 +100,8 @@ async function generatePDF(inputFilePath) {
           fontSize: infoGeneralFontSize,
         });
 
-        const infoGeneralX = (doc.page.width - infoGeneralTextWidth) / 35; // Ajusta la posición X
-        const infoGeneralY = outerRectY + outerRectHeight + 20; // Ajusta la posición Y
+        const infoGeneralX = (doc.page.width - infoGeneralTextWidth) / 35;
+        const infoGeneralY = outerRectY + outerRectHeight + 20;
 
         doc
           .fillColor("white")
@@ -175,7 +175,7 @@ async function generatePDF(inputFilePath) {
 
         // Añadir recuadro blanco con información de la empresa
         const companyRectWidth = doc.page.width - 50;
-        const companyRectHeight = 300; // Aumenta la altura para dar más espacio a la información
+        const companyRectHeight = 300;
         const companyRectX = (doc.page.width - companyRectWidth) / 2;
         const companyRectY = contactRectY + contactRectHeight + 20;
 
@@ -268,8 +268,17 @@ async function generatePDF(inputFilePath) {
           companyRectY + 180
         );
 
+        // Finaliza el documento y convierte a base64
+        const chunks = [];
+        doc.on("data", (chunk) => chunks.push(chunk));
+        doc.on("end", () => {
+          const pdfBuffer = Buffer.concat(chunks);
+          const pdfBase64 = pdfBuffer.toString("base64");
+          resolve(pdfBase64);
+        });
+
         // Finaliza el documento y guarda en un archivo local
-        let outputPath = "./pdfFinal/archivo.pdf"; // Cambia a tu ruta preferida
+        let outputPath = "./pdfFinal/archivo.pdf";
         const writeStream = fs.createWriteStream(outputPath);
 
         // Capturar errores de escritura
